@@ -25,8 +25,8 @@ v1_api = Api(api_name='v1')
 v1_api.register(CategoryResources())
 v1_api.register(FoodResource())
 
-
 urlpatterns = [
+    url(r'^jet/', include('jet.urls', 'jet')),
     url(r'^admin/', admin.site.urls),
     url(r'^api/', include(v1_api.urls)),
 ]
