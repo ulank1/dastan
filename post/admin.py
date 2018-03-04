@@ -1,5 +1,5 @@
 from django.contrib import admin
-
+from jet.admin import CompactInline
 
 from post.models import Category, Food
 
@@ -11,7 +11,7 @@ admin.site.unregister(Group)
 admin.site.unregister(User)
 
 
-class FoodAdmin(admin.StackedInline):
+class FoodAdmin(CompactInline):
     model = Food
     extra = 1
     readonly_fields = 'created_at updated_at'.split()
